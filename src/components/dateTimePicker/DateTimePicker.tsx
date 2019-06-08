@@ -3,13 +3,13 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import * as E from './DateTimePickerStyles';
 
-export interface DateTimePickerProps {
+export interface IDateTimePickerProps {
   onChange: (date: Date) => void;
   startDate: Date;
   inputLabel: string;
 }
 
-export default class DateTimePicker extends React.Component<DateTimePickerProps, any> {
+export default class DateTimePicker extends React.Component<IDateTimePickerProps, any> {
   public render() {
     const { inputLabel, startDate, onChange } = this.props;
     return (

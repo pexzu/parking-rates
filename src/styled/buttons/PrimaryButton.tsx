@@ -3,11 +3,11 @@ import styled from '@emotion/styled';
 export const PrimaryButton = styled('button')`
   label: PrimaryButton;
 
-  padding: 12px 6px;
+  padding: 6px 15px;
   color: #ffffff;
-  background: purple;
-  border: 2px solid grey;
+  background: #224172;
   border-radius: 3px;
+  border: 0;
 
   &:hover {
     opacity: 0.9;
