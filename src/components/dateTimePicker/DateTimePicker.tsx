@@ -5,17 +5,33 @@ import * as E from './DateTimePickerStyles';
 
 export interface IDateTimePickerProps {
   onChange: (date: Date) => void;
-  startDate: Date;
+  startDate?: Date;
+  minDate?: Date;
+  maxDate?: Date;
+  maxTime?: Date;
+  minTime?: Date;
+  placeholder: string;
   inputLabel: string;
 }
 
 export default class DateTimePicker extends React.Component<IDateTimePickerProps, any> {
   public render() {
-    const { inputLabel, startDate, onChange } = this.props;
+    const {
+      inputLabel,
+      startDate,
+      onChange,
+      minDate,
+      maxDate,
+      placeholder,
+      minTime,
+      maxTime,
+    } = this.props;
+    console.log(maxDate);
     return (
       <E.DateTimePickerContainer>
         <E.DateTimePickerInputLabel>{inputLabel}</E.DateTimePickerInputLabel>
         <DatePicker
+          placeholderText={placeholder}
           selected={this.props.startDate}
           onChange={this.props.onChange}
           showTimeSelect
@@ -23,6 +39,10 @@ export default class DateTimePicker extends React.Component<IDateTimePickerProps
           timeIntervals={15}
           dateFormat='MMMM d, yyyy h:mm aa'
           timeCaption='time'
+          minDate={minDate && minDate}
+          maxDate={maxDate && maxDate}
+          minTime={minTime ? minTime : minDate || new Date()}
+          maxTime={maxTime ? maxTime : maxDate || new Date()}
         />
       </E.DateTimePickerContainer>
     );
