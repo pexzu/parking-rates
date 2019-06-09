@@ -41,8 +41,8 @@ export default class DateTimePicker extends React.Component<IDateTimePickerProps
           timeCaption='time'
           minDate={minDate && minDate}
           maxDate={maxDate && maxDate}
-          minTime={minTime ? minTime : minDate || new Date()}
-          maxTime={maxTime ? maxTime : maxDate || new Date()}
+          minTime={minDate ? minDate : new Date(new Date(new Date().setMinutes(0)).setHours(0))}
+          maxTime={maxDate ? maxDate : new Date(new Date().setHours(23))}
         />
       </E.DateTimePickerContainer>
     );

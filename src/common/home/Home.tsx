@@ -72,12 +72,10 @@ export default class Home extends React.Component<IHomeProps, IHomeState> {
             onChange={this.updateEntryDate}
             maxDate={exitDate}
             placeholder='Select entry'
-            maxTime={new Date(new Date(new Date().setMinutes(0)).setHours(24))}
           />
           <DateTimePicker
             inputLabel='Exit: '
             minDate={entryDate}
-            minTime={new Date(new Date(new Date().setMinutes(0)).setHours(1))}
             startDate={exitDate}
             onChange={this.updateExitDate}
             placeholder='Select exit'
