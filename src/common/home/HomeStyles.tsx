@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
-
-import { DropdownIcon } from '../../assets/DropdownIcon';
+import { jsx, css, keyframes } from '@emotion/core';
 
 export const HomeContainer = styled.div`
   label: HomeContainer;
@@ -24,38 +23,17 @@ export const HomeInputBlock = styled.div`
   padding: 50px 0;
 `;
 
-export const HomeInfoBlock = styled.div`
-  label: HomeInfoBlock;
-  display: flex;
-  justify-content: space-between;
-  padding: 15px;
-  align-items: center;
-  padding: 0 24px;
-  box-shadow: 0 0 1px 0;
-  background: #224172;
-`;
-
-export const HomeInfoBlockLabel = styled.div`
-  label: HomeInfoBlockLabel;
-  padding: 36px;
-  font-size: 21px;
-  color: #ffffff;
-`;
-
-interface IHomeInfoBlockIconContainer {
-  rotate: boolean;
-}
-export const HomeInfoBlockIcon = styled.span<IHomeInfoBlockIconContainer>`
-  label: HomeInfoBlockIcon;
-  transform: ${props => props.rotate && 'rotate(180deg)'};
-  transition: 0.3s ease;
-  width: 24px;
-  height: 24px;
-  > svg {
-    fill: #ffffff;
-  }
-`;
-
 export const HomeInputBlockMessage = styled.div`
   label: HomeInputBlockMessage;
+`;
+
+export const drop = keyframes`
+  from {
+    max-height: 0%;
+    opacity:.5;
+  }
+  to { 
+    max-height: 100%;
+    opacity:1;
+  }
 `;

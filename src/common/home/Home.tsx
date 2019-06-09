@@ -1,14 +1,17 @@
 import * as React from 'react';
 import * as E from './HomeStyles';
 import DateTimePicker from '../../components/dateTimePicker/DateTimePicker';
+import { PrimaryTile } from '../../components/primaryTile/PrimaryTile';
+import { ToggleInfoContent } from './elements/toggleInfoContent/ToggleInfoContent';
+import { ToggleShowAboutUs } from './elements/toggleShowAboutUs/ToggleShowAboutUs';
 import { PrimaryButton } from '../../styled/buttons/PrimaryButton';
-import { DropdownIcon } from '../../assets/DropdownIcon';
 
 interface IHomeProps {}
 interface IHomeState {
   entryDate: Date;
   exitDate: Date;
-  toggleInfo: boolean;
+  showInfo: boolean;
+  showAboutUs: boolean;
 }
 
 export default class Home extends React.Component<IHomeProps, IHomeState> {
@@ -17,7 +20,8 @@ export default class Home extends React.Component<IHomeProps, IHomeState> {
     this.state = {
       entryDate: new Date(),
       exitDate: new Date(),
-      toggleInfo: false,
+      showInfo: false,
+      showAboutUs: false,
     };
   }
 
@@ -35,12 +39,18 @@ export default class Home extends React.Component<IHomeProps, IHomeState> {
 
   toggleInfo = () => {
     this.setState({
-      toggleInfo: !this.state.toggleInfo,
+      showInfo: !this.state.showInfo,
+    });
+  };
+
+  toggleAboutUs = () => {
+    this.setState({
+      showAboutUs: !this.state.showAboutUs,
     });
   };
 
   render() {
-    const { entryDate, exitDate, toggleInfo } = this.state;
+    const { entryDate, exitDate, showInfo, showAboutUs } = this.state;
     return (
       <E.HomeContainer>
         <E.HomeHeaderBlock>Parking Rate Calculator</E.HomeHeaderBlock>
@@ -56,12 +66,10 @@ export default class Home extends React.Component<IHomeProps, IHomeState> {
           <DateTimePicker inputLabel='Exit: ' startDate={exitDate} onChange={this.updateExitDate} />
           <PrimaryButton>Submit</PrimaryButton>
         </E.HomeInputBlock>
-        <E.HomeInfoBlock onClick={this.toggleInfo}>
-          <E.HomeInfoBlockLabel>Rate Info</E.HomeInfoBlockLabel>
-          <E.HomeInfoBlockIcon rotate={toggleInfo}>
-            <DropdownIcon />
-          </E.HomeInfoBlockIcon>
-        </E.HomeInfoBlock>
+        <PrimaryTile onClick={this.toggleInfo} rotate={showInfo} label='Rate Info' />
+        {showInfo && <ToggleInfoContent />}
+        <PrimaryTile onClick={this.toggleAboutUs} rotate={showAboutUs} label='About Us' />
+        {showAboutUs && <ToggleShowAboutUs />}
       </E.HomeContainer>
     );
   }

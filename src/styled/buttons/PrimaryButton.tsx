@@ -8,6 +8,8 @@ export const PrimaryButton = styled('button')`
   background: #224172;
   border-radius: 3px;
   border: 0;
+  transition: 0.3s ease;
+  cursor: pointer;
 
   &:hover {
     opacity: 0.9;
