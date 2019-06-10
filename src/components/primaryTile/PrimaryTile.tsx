@@ -8,14 +8,23 @@ export interface PrimaryTileProps {
   rotate: boolean;
 }
 
-export function PrimaryTile(props: PrimaryTileProps) {
-  const { onClick, label, rotate } = props;
-  return (
-    <E.PrimaryTileBlock onClick={onClick}>
-      <E.PrimaryTileBlockLabel>{label}</E.PrimaryTileBlockLabel>
-      <E.PrimaryTileBlockIcon rotate={rotate}>
-        <DropdownIcon />
-      </E.PrimaryTileBlockIcon>
-    </E.PrimaryTileBlock>
-  );
+export default class PrimaryTile extends React.PureComponent<PrimaryTileProps> {
+  private tile = React.createRef<HTMLDivElement>();
+
+  onClick = () => {
+    this.props.onClick();
+    console.log(this.tile.current);
+    this.tile.current && window.scrollTo(0, this.tile.current.offsetTop);
+  };
+  render() {
+    const { label, rotate } = this.props;
+    return (
+      <E.PrimaryTileBlock onClick={this.onClick} ref={this.tile}>
+        <E.PrimaryTileBlockLabel>{label}</E.PrimaryTileBlockLabel>
+        <E.PrimaryTileBlockIcon rotate={rotate}>
+          <DropdownIcon />
+        </E.PrimaryTileBlockIcon>
+      </E.PrimaryTileBlock>
+    );
+  }
 }

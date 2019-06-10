@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as E from './HomeStyles';
 import DateTimePicker from '../../components/dateTimePicker/DateTimePicker';
-import { PrimaryTile } from '../../components/primaryTile/PrimaryTile';
+import PrimaryTile from '../../components/primaryTile/PrimaryTile';
 import { ToggleInfoContent } from './elements/toggleInfoContent/ToggleInfoContent';
 import { ToggleShowAboutUs } from './elements/toggleShowAboutUs/ToggleShowAboutUs';
 import { PrimaryButton } from '../../styled/buttons/PrimaryButton';
