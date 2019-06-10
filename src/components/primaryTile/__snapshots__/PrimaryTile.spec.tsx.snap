@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PrimaryTileBlock renders correctly 1`] = `
+<div
+  className="css-1vbjs70-PrimaryTileBlock"
+/>
+`;
+
+exports[`PrimaryTileBlockLabel renders correctly 1`] = `
+<div
+  className="css-12zm5pv-PrimaryTileBlockLabel"
+/>
+`;

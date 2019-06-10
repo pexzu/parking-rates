@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PrimaryButton renders correctly 1`] = `
+<button
+  className="css-2riwt5-PrimaryButton"
+/>
+`;

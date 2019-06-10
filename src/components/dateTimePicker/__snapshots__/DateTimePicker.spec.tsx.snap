@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DateTimePickerContainer renders correctly 1`] = `
+<div
+  className="css-mir5xb-DateTimePickerContainer"
+/>
+`;
+
+exports[`DateTimePickerInputLabel renders correctly 1`] = `
+<div
+  className="css-ci9z6j-DateTimePickerInputLabel"
+/>
+`;

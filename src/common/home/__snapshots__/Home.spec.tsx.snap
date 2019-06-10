@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AboutUsContainer renders correctly 1`] = `
+<div
+  className="css-1myhlma-AboutUsContainer"
+/>
+`;
+
+exports[`CalculatedResultContatiner renders correctly 1`] = `
+<div
+  className="css-1nl5bh1-CalculatedResultContatiner"
+/>
+`;
+
+exports[`HomeContainer renders correctly 1`] = `
+<div
+  className="css-bplkqs-HomeContainer"
+/>
+`;
+
+exports[`HomeHeaderBlock renders correctly 1`] = `
+<header
+  className="css-i6ue13-HomeHeaderBlock"
+/>
+`;
+
+exports[`HomeInputBlock renders correctly 1`] = `
+<div
+  className="css-1hicozr-HomeInputBlock"
+/>
+`;
+
+exports[`HomeInputBlockMessage renders correctly 1`] = `
+<div
+  className="css-1pvpznp-HomeInputBlockMessage"
+/>
+`;
+
+exports[`OtherRatesBlock renders correctly 1`] = `
+<div
+  className="css-1opqkqn-OtherRatesBlock"
+/>
+`;
+
+exports[`OtherRatesContainer renders correctly 1`] = `
+<div
+  className="css-kx8e9j-OtherRatesContainer"
+/>
+`;
+
+exports[`OtherRatesCost renders correctly 1`] = `
+<div
+  className="css-4v9t9r-ToggleInfoContentBlockPrice-OtherRatesCost"
+/>
+`;
+
+exports[`OtherRatesPeriod renders correctly 1`] = `
+<div
+  className="css-ii28od-OtherRatesPeriod"
+/>
+`;
+
+exports[`ToggleInfoContentBlock renders correctly 1`] = `
+<div
+  className="css-4a5q76-ToggleInfoContentBlock"
+/>
+`;
+
+exports[`ToggleInfoContentBlockConditon renders correctly 1`] = `
+<div
+  className="css-19b61i6-ToggleInfoContentBlockConditon"
+/>
+`;
+
+exports[`ToggleInfoContentBlockLabel renders correctly 1`] = `
+<div
+  className="css-1q45o0s-ToggleInfoContentBlockLabel"
+/>
+`;
+
+exports[`ToggleInfoContentBlockLeftSide renders correctly 1`] = `
+<div
+  className="css-1wrzv2e-ToggleInfoContentBlockLeftSide"
+/>
+`;
+
+exports[`ToggleInfoContentBlockPrice renders correctly 1`] = `
+<div
+  className="css-p82oyo-ToggleInfoContentBlockPrice"
+/>
+`;
+
+exports[`ToggleInfoContentBlockRightSide renders correctly 1`] = `
+<div
+  className="css-ydhful-ToggleInfoContentBlockRightSide"
+/>
+`;
+
+exports[`ToggleInfoContentBlockSection renders correctly 1`] = `
+<div
+  className="css-rflijk-ToggleInfoContentBlockSection"
+/>
+`;
+
+exports[`ToggleInfoContentBlockType renders correctly 1`] = `
+<div
+  className="css-1ib1lc9-ToggleInfoContentBlockType"
+/>
+`;
+
+exports[`ToggleInfoContentContainer renders correctly 1`] = `
+<div
+  className="css-1p1kq2u-ToggleInfoContentContainer"
+/>
+`;
