@@ -14,7 +14,6 @@ export default class PrimaryTile extends React.PureComponent<PrimaryTileProps> {
 
   onClick = () => {
     this.props.onClick();
-    console.log(this.tile.current);
     zenscroll.toY((this.tile.current && this.tile.current.offsetTop) || 0);
   };
   render() {

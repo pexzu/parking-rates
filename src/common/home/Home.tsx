@@ -28,11 +28,9 @@ export default class Home extends React.Component<IHomeProps, IHomeState> {
   }
 
   updateEntryDate = (date: Date) => {
-    const exitDate = this.state.exitDate && this.state.exitDate > date ? this.state.exitDate : date;
     this.setState(
       {
         entryDate: date,
-        exitDate: exitDate,
       },
       () => {
         this.toggleOffCalculatedRate();
@@ -41,12 +39,9 @@ export default class Home extends React.Component<IHomeProps, IHomeState> {
   };
 
   updateExitDate = (date: Date) => {
-    const entryDate =
-      this.state.entryDate && this.state.entryDate < date ? this.state.entryDate : date;
     this.setState(
       {
         exitDate: date,
-        entryDate: entryDate,
       },
       () => {
         this.toggleOffCalculatedRate();
@@ -88,7 +83,7 @@ export default class Home extends React.Component<IHomeProps, IHomeState> {
           <E.HomeInputBlockMessage>{config.mainInstruction}</E.HomeInputBlockMessage>
           <DateTimePicker
             inputLabel={config.entryFieldLabel}
-            startDate={entryDate ? entryDate : exitDate}
+            startDate={entryDate && entryDate}
             onChange={this.updateEntryDate}
             maxDate={exitDate}
             placeholder={config.entryPlaceholder}
@@ -96,7 +91,7 @@ export default class Home extends React.Component<IHomeProps, IHomeState> {
           <DateTimePicker
             inputLabel={config.exitFieldLabel}
             minDate={entryDate}
-            startDate={exitDate ? exitDate : entryDate}
+            startDate={exitDate && exitDate}
             onChange={this.updateExitDate}
             placeholder={config.exitPlaceholder}
           />
