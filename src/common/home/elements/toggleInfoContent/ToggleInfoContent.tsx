@@ -4,7 +4,7 @@ import { rates } from '../../../../mockData/mockData';
 
 export interface IToggleInfoContentProps {}
 
-export function ToggleInfoContent(props: IToggleInfoContentProps) {
+export const ToggleInfoContent = (props: IToggleInfoContentProps) => {
   return (
     <E.ToggleInfoContentContainer>
       {rates.map((item, keyIndex) => (
@@ -31,7 +31,7 @@ export function ToggleInfoContent(props: IToggleInfoContentProps) {
       ))}
     </E.ToggleInfoContentContainer>
   );
-}
+};
 
 const renderOtherRates = (price: [{}]) => {
   return (

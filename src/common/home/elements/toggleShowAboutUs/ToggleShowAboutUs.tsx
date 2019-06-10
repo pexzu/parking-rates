@@ -4,6 +4,6 @@ import * as E from './ToggleShowAboutUsStyles';
 
 export interface IToggleShowAboutUsProps {}
 
-export function ToggleShowAboutUs(props: IToggleShowAboutUsProps) {
+export const ToggleShowAboutUs = (props: IToggleShowAboutUsProps) => {
   return <E.AboutUsContainer>{aboutUs}</E.AboutUsContainer>;
-}
+};
