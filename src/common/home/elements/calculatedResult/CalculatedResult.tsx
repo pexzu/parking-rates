@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { getRate } from '../../../../logic/RateCalculation';
 
 export interface ICalculatedResult {
   entry: Date;
@@ -8,7 +9,7 @@ export interface ICalculatedResult {
 export function CalculatedResult(props: ICalculatedResult) {
   return (
     <div>
-      stst
+      The total cost for your parking period is :{getRate(props.entry, props.exit)}
       <div />
     </div>
   );

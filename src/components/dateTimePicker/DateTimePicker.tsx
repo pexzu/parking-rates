@@ -26,7 +26,6 @@ export default class DateTimePicker extends React.Component<IDateTimePickerProps
       minTime,
       maxTime,
     } = this.props;
-    console.log(maxDate);
     return (
       <E.DateTimePickerContainer>
         <E.DateTimePickerInputLabel>{inputLabel}</E.DateTimePickerInputLabel>

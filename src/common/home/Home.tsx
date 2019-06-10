@@ -58,7 +58,7 @@ export default class Home extends React.Component<IHomeProps, IHomeState> {
 
   render() {
     const { entryDate, exitDate, showInfo, showAboutUs, showCalculatedResult } = this.state;
-    console.log(exitDate);
+
     return (
       <E.HomeContainer>
         <E.HomeHeaderBlock>Parking Rate Calculator</E.HomeHeaderBlock>
@@ -80,7 +80,10 @@ export default class Home extends React.Component<IHomeProps, IHomeState> {
             onChange={this.updateExitDate}
             placeholder='Select exit'
           />
-          <PrimaryButton onClick={this.togglCalculatedRate}>Submit</PrimaryButton>
+
+          <PrimaryButton onClick={this.togglCalculatedRate} disabled={!(entryDate && exitDate)}>
+            Submit
+          </PrimaryButton>
           {showCalculatedResult && entryDate && exitDate && (
             <CalculatedResult entry={entryDate} exit={exitDate} />
           )}

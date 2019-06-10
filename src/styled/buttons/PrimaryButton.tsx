@@ -14,4 +14,11 @@ export const PrimaryButton = styled('button')`
   &:hover {
     opacity: 0.9;
   }
+  &:disabled {
+    background: #d3d3d3;
+    cursor: not-allowed;
+    &:hover {
+      opacity: 1;
+    }
+  }
 `;
