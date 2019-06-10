@@ -27,15 +27,30 @@ export default class Home extends React.Component<IHomeProps, IHomeState> {
   }
 
   updateEntryDate = (date: Date) => {
-    this.setState({
-      entryDate: date,
-    });
+    const exitDate = this.state.exitDate && this.state.exitDate > date ? this.state.exitDate : date;
+    this.setState(
+      {
+        entryDate: date,
+        exitDate: exitDate,
+      },
+      () => {
+        this.toggleOffCalculatedRate();
+      }
+    );
   };
 
   updateExitDate = (date: Date) => {
-    this.setState({
-      exitDate: date,
-    });
+    const entryDate =
+      this.state.entryDate && this.state.entryDate < date ? this.state.entryDate : date;
+    this.setState(
+      {
+        exitDate: date,
+        entryDate: entryDate,
+      },
+      () => {
+        this.toggleOffCalculatedRate();
+      }
+    );
   };
 
   toggleInfo = () => {
@@ -50,7 +65,13 @@ export default class Home extends React.Component<IHomeProps, IHomeState> {
     });
   };
 
-  togglCalculatedRate = () => {
+  toggleOffCalculatedRate = () => {
+    this.setState({
+      showCalculatedResult: false,
+    });
+  };
+
+  toggleCalculatedRate = () => {
     this.setState({
       showCalculatedResult: true,
     });
@@ -81,7 +102,7 @@ export default class Home extends React.Component<IHomeProps, IHomeState> {
             placeholder='Select exit'
           />
 
-          <PrimaryButton onClick={this.togglCalculatedRate} disabled={!(entryDate && exitDate)}>
+          <PrimaryButton onClick={this.toggleCalculatedRate} disabled={!(entryDate && exitDate)}>
             Submit
           </PrimaryButton>
           {showCalculatedResult && entryDate && exitDate && (

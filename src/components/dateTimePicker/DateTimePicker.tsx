@@ -58,9 +58,7 @@ export default class DateTimePicker extends React.Component<
     }
   };
 
-  newf = () => {
-    console.log(this.props.startDate);
-
+  onClick = () => {
     this.props.startDate && this.setMinTimeAndMaxTime(this.props.startDate);
   };
 
@@ -83,7 +81,7 @@ export default class DateTimePicker extends React.Component<
           maxDate={maxDate && maxDate}
           minTime={currentMinTime}
           maxTime={currentMaxTime}
-          onInputClick={() => this.newf()}
+          onInputClick={() => this.onClick()}
         />
       </E.DateTimePickerContainer>
     );
