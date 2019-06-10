@@ -20,7 +20,7 @@ export default class Home extends React.Component<IHomeProps, IHomeState> {
   constructor(props: IHomeProps) {
     super(props);
     this.state = {
-      showInfo: false,
+      showInfo: true,
       showAboutUs: false,
       showCalculatedResult: false,
     };

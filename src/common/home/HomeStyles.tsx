@@ -5,6 +5,9 @@ export const HomeContainer = styled.div`
   label: HomeContainer;
   height: 100vh;
   background: #f2f2f2;
+  max-width: 75%;
+  margin: auto;
+  box-shadow: 0 0 0.5px 0 #938888;
 `;
 
 export const HomeHeaderBlock = styled.header`
