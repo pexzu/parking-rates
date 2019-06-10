@@ -1,6 +1,7 @@
 import * as React from 'react';
 import * as E from './PrimaryTileStyles';
 import { DropdownIcon } from '../../assets/DropdownIcon';
+import zenscroll from 'zenscroll';
 
 export interface PrimaryTileProps {
   onClick: () => void;
@@ -14,7 +15,7 @@ export default class PrimaryTile extends React.PureComponent<PrimaryTileProps> {
   onClick = () => {
     this.props.onClick();
     console.log(this.tile.current);
-    this.tile.current && window.scrollTo(0, this.tile.current.offsetTop);
+    zenscroll.toY((this.tile.current && this.tile.current.offsetTop) || 0);
   };
   render() {
     const { label, rotate } = this.props;
