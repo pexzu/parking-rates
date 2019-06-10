@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { aboutUs } from '../../../../mockData/mockData';
+import { aboutUs } from '../../../../data/data';
 import * as E from './ToggleShowAboutUsStyles';
 
 export interface IToggleShowAboutUsProps {}

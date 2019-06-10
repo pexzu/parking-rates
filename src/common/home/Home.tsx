@@ -6,6 +6,7 @@ import { ToggleInfoContent } from './elements/toggleInfoContent/ToggleInfoConten
 import { ToggleShowAboutUs } from './elements/toggleShowAboutUs/ToggleShowAboutUs';
 import { PrimaryButton } from '../../styled/buttons/PrimaryButton';
 import { CalculatedResult } from './elements/calculatedResult/CalculatedResult';
+import { config } from '../../data/data';
 
 interface IHomeProps {}
 interface IHomeState {
@@ -82,36 +83,38 @@ export default class Home extends React.Component<IHomeProps, IHomeState> {
 
     return (
       <E.HomeContainer>
-        <E.HomeHeaderBlock>Parking Rate Calculator</E.HomeHeaderBlock>
+        <E.HomeHeaderBlock>{config.title}</E.HomeHeaderBlock>
         <E.HomeInputBlock>
-          <E.HomeInputBlockMessage>
-            Please choose the time period for the parking rate calculation:
-          </E.HomeInputBlockMessage>
+          <E.HomeInputBlockMessage>{config.mainInstruction}</E.HomeInputBlockMessage>
           <DateTimePicker
-            inputLabel='Entry: '
+            inputLabel={config.entryFieldLabel}
             startDate={entryDate ? entryDate : exitDate}
             onChange={this.updateEntryDate}
             maxDate={exitDate}
-            placeholder='Select entry'
+            placeholder={config.entryPlaceholder}
           />
           <DateTimePicker
-            inputLabel='Exit: '
+            inputLabel={config.exitFieldLabel}
             minDate={entryDate}
             startDate={exitDate ? exitDate : entryDate}
             onChange={this.updateExitDate}
-            placeholder='Select exit'
+            placeholder={config.exitPlaceholder}
           />
 
           <PrimaryButton onClick={this.toggleCalculatedRate} disabled={!(entryDate && exitDate)}>
-            Submit
+            {config.submitButtonLabel}
           </PrimaryButton>
           {showCalculatedResult && entryDate && exitDate && (
             <CalculatedResult entry={entryDate} exit={exitDate} />
           )}
         </E.HomeInputBlock>
-        <PrimaryTile onClick={this.toggleInfo} rotate={showInfo} label='Rate Info' />
+        <PrimaryTile onClick={this.toggleInfo} rotate={showInfo} label={config.infoLabel} />
         {showInfo && <ToggleInfoContent />}
-        <PrimaryTile onClick={this.toggleAboutUs} rotate={showAboutUs} label='About Us' />
+        <PrimaryTile
+          onClick={this.toggleAboutUs}
+          rotate={showAboutUs}
+          label={config.aboutUsLabel}
+        />
         {showAboutUs && <ToggleShowAboutUs />}
       </E.HomeContainer>
     );

@@ -1,3 +1,5 @@
+import { config } from '../data/data';
+
 export const getRate = (entry: Date, exit: Date) => {
   // const entryHour= entry.getHours();
   // const entryMinute = entry.getMinutes();
@@ -18,16 +20,16 @@ export const getRate = (entry: Date, exit: Date) => {
     timePeriodInHours <= 48 //same weekend
   ) {
     rate = 10;
-    return `You are qualified for Weekend Charges and the total rate is: $${rate}`;
+    return config.weekendRateResultMessage + rate;
   } else if (timePeriodInHours <= 24 && isEarlyBirdEntry && isEarlyBirdOrNightExit) {
     rate = 130;
-    return `You are qualified for Early Bird Charges and the total rate is: $${rate}`;
+    return config.earlyBirdResultMessage + rate;
   } else if (timePeriodInHours <= 24 && isNightEntry && isEarlyBirdOrNightExit) {
     rate = 6.5;
-    return `You are qualified for Night Rate charges and the total rate is: $${rate}`;
+    return config.nightRateResultMessage + rate;
   } else {
     rate = calculateStandardCharge(timePeriodInHours);
-    return `Your parking rate is calculated based on Standard Charges is: $${rate}`;
+    return config.standardRateResultMessage + rate;
   }
 
   return 5;

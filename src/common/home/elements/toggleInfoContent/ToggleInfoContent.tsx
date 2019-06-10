@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as E from './ToggleInfoContentStyles';
-import { rates } from '../../../../mockData/mockData';
+import { rates } from '../../../../data/data';
 
 export interface IToggleInfoContentProps {}
 
