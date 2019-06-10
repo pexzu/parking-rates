@@ -68,7 +68,7 @@ export default class Home extends React.Component<IHomeProps, IHomeState> {
           </E.HomeInputBlockMessage>
           <DateTimePicker
             inputLabel='Entry: '
-            startDate={entryDate}
+            startDate={entryDate ? entryDate : exitDate}
             onChange={this.updateEntryDate}
             maxDate={exitDate}
             placeholder='Select entry'
@@ -76,7 +76,7 @@ export default class Home extends React.Component<IHomeProps, IHomeState> {
           <DateTimePicker
             inputLabel='Exit: '
             minDate={entryDate}
-            startDate={exitDate}
+            startDate={exitDate ? exitDate : entryDate}
             onChange={this.updateExitDate}
             placeholder='Select exit'
           />
