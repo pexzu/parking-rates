@@ -4,6 +4,7 @@ export const PrimaryButton = styled('button')`
   label: PrimaryButton;
 
   padding: 6px 15px;
+  margin: 6px;
   color: #ffffff;
   background: #224172;
   border-radius: 3px;

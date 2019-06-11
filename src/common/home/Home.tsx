@@ -67,10 +67,20 @@ export default class Home extends React.Component<IHomeProps, IHomeState> {
     });
   };
 
-  toggleCalculatedRate = () => {
+  toggleOnCalculatedRate = () => {
     this.setState({
       showCalculatedResult: true,
     });
+  };
+
+  resetDates = () => {
+    this.setState(
+      {
+        entryDate: undefined,
+        exitDate: undefined,
+      },
+      this.toggleOffCalculatedRate
+    );
   };
 
   render() {
@@ -95,10 +105,12 @@ export default class Home extends React.Component<IHomeProps, IHomeState> {
             onChange={this.updateExitDate}
             placeholder={config.exitPlaceholder}
           />
-
-          <PrimaryButton onClick={this.toggleCalculatedRate} disabled={!(entryDate && exitDate)}>
+          <PrimaryButton onClick={this.toggleOnCalculatedRate} disabled={!(entryDate && exitDate)}>
             {config.submitButtonLabel}
           </PrimaryButton>
+          {showCalculatedResult && (
+            <PrimaryButton onClick={this.resetDates}>{config.clearButtonLabel}</PrimaryButton>
+          )}
           {showCalculatedResult && entryDate && exitDate && (
             <CalculatedResult entry={entryDate} exit={exitDate} />
           )}

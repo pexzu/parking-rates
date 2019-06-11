@@ -61,6 +61,7 @@ export const config = {
   infoLabel: 'Rate Info',
   aboutUsLabel: 'About Us',
   submitButtonLabel: 'Submit',
+  clearButtonLabel: 'Clear',
   earlyBirdResultMessage: 'You are qualified for Early Bird Charges and the total rate is: $',
   nightRateResultMessage: 'You are qualified for Night Rate charges and the total rate is: $',
   weekendRateResultMessage: 'You are qualified for Weekend Charges and the total rate is: $',
