@@ -37,8 +37,14 @@ export default class DateTimePicker extends React.Component<
   /*This method is done to avoid the inconsistancy with the datepicked time picked component. 
   Once they publish next version we can exclude timebounds as a part of datebounds*/
 
-  setMinTimeAndMaxTime = (currentDate: Date) => {
-    const { minDate, maxDate } = this.props;
+  setMinTimeAndMaxTime = (date: Date) => {
+    const { minDate, maxDate, startDate } = this.props;
+    let currentDate = date;
+    console.log(startDate && startDate, date);
+    if (startDate && date < startDate) {
+      debugger;
+      currentDate = startDate;
+    }
     if (currentDate && minDate && currentDate.getDate() === minDate.getDate()) {
       this.setState({
         currentMinTime: minDate,
@@ -61,9 +67,11 @@ export default class DateTimePicker extends React.Component<
   };
 
   onClick = () => {
-    const { minDate, maxDate } = this.props;
+    const { minDate, maxDate, startDate } = this.props;
     let currentDate;
-    if (minDate) {
+    if (startDate) {
+      currentDate = startDate;
+    } else if (minDate) {
       currentDate = minDate;
     } else if (maxDate) {
       currentDate = maxDate;
