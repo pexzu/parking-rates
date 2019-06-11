@@ -2,7 +2,6 @@ import * as React from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import * as E from './DateTimePickerStyles';
-import { start } from 'repl';
 
 export interface IDateTimePickerProps {
   onChange: (date: Date) => void;
@@ -74,7 +73,7 @@ export default class DateTimePicker extends React.Component<
   };
 
   public render() {
-    const { inputLabel, startDate, onChange, minDate, maxDate, placeholder } = this.props;
+    const { inputLabel, startDate, minDate, maxDate, placeholder } = this.props;
     const { currentMaxTime, currentMinTime } = this.state;
     return (
       <E.DateTimePickerContainer>

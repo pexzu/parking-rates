@@ -1,10 +1,6 @@
 import { config } from '../data/data';
 
 export const getRate = (entry: Date, exit: Date) => {
-  // const entryHour= entry.getHours();
-  // const entryMinute = entry.getMinutes();
-  // const exitHour = exit.getHours();
-  // const exitMinute = exit.getMinutes();
   let rate;
   const timePeriodInHours = (exit.getTime() - entry.getTime()) / (1000 * 60 * 60);
 
@@ -15,8 +11,8 @@ export const getRate = (entry: Date, exit: Date) => {
 
   const isNightEntry = entry.getHours() >= 18 && entry.getHours() <= 23;
   if (
-    (entry.getDay() == 6 || entry.getDay() == 0) &&
-    (exit.getDay() == 6 || exit.getDay() == 0) &&
+    (entry.getDay() === 6 || entry.getDay() === 0) &&
+    (exit.getDay() === 6 || exit.getDay() === 0) &&
     timePeriodInHours <= 48 //same weekend
   ) {
     rate = 10;
@@ -31,8 +27,6 @@ export const getRate = (entry: Date, exit: Date) => {
     rate = calculateStandardCharge(timePeriodInHours);
     return config.standardRateResultMessage + rate;
   }
-
-  return 5;
 };
 
 const calculateStandardCharge = (hours: number) => {
