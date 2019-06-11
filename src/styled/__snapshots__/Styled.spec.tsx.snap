@@ -2,6 +2,6 @@
 
 exports[`PrimaryButton renders correctly 1`] = `
 <button
-  className="css-2riwt5-PrimaryButton"
+  className="css-ofp0oc-PrimaryButton"
 />
 `;
